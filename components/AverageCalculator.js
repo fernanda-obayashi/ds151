@@ -15,8 +15,8 @@ const AverageCalculator = () => {
   const [nota2, setNota2] = useState(0);
   const [result, setResult] = useState(0);
 
-  const a = parseInt(nota1.current.value);
-  const b = parseInt(nota2.current.value);
+  const a = parseFloat(nota1.valueOf);
+  const b = parseFloat(nota2.valueOf);
 
   const addAverageCalculator = async () => {
     try {
@@ -38,18 +38,10 @@ const AverageCalculator = () => {
     });
   };
 
-  useEffect(() => {
-    getAverageCalculator();
-  }, []);
-
-  function converte(result) {
-    return parseFloat(result);
-  }
-
   const calcula = () => {
-    const result = (a + b) / 2;
+    const result = (parseFloat(nota1) + parseFloat(nota2)) / 2;
 
-    setResult(converte(result));
+    setResult(result);
   };
 
   return (
@@ -61,7 +53,7 @@ const AverageCalculator = () => {
           placeholder="Digite aqui"
           style={styles.input}
           value={nota1}
-          onChange={(e) => setNota1(e.nativeEvent.text)}
+          onChange={(e) => setNota1(+e.target.value)}
           onSubmitEditing={addAverageCalculator}
         ></TextInput>
       </View>
@@ -72,7 +64,7 @@ const AverageCalculator = () => {
           placeholder="Digite aqui"
           style={styles.input}
           value={nota2}
-          onChange={(e) => setNota2(e.nativeEvent.text)}
+          onChange={(e) => setNota2(+e.target.value)}
         ></TextInput>
       </View>
       <View>
