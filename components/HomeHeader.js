@@ -12,18 +12,20 @@ const HomeHeader = () => {
 const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    padding: 10,
-    width: "90%",
+    justifyContent: "space-around",
+    alignItems: "stretch",
+    backgroundColor: "#faf7fa",
     alignSelf: "center",
-    marginVertical: 10,
+    width: "100%",
   },
   title: {
-    fontSize: 20,
-    fontWeight: 300,
-    flex: 1,
+    alignSelf: "center",
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    padding: 35,
   },
 });
 

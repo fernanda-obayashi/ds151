@@ -53,7 +53,7 @@ const AverageCalculator = () => {
 
   return (
     <View>
-      <Text>Primeira nota:</Text>
+      <Text style={styles.text2}>Primeira nota:</Text>
       <View style={styles.container}>
         <Octicons name="number" size={24} color="black" />
         <TextInput
@@ -66,7 +66,7 @@ const AverageCalculator = () => {
         ></TextInput>
       </View>
 
-      <Text>Segunda nota:</Text>
+      <Text style={styles.text2}>Segunda nota:</Text>
       <View style={styles.container}>
         <Octicons name="number" size={24} color="black" />
         <TextInput
@@ -91,6 +91,7 @@ const AverageCalculator = () => {
 
 const styles = StyleSheet.create({
   container: {
+    margin: 20,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -130,6 +131,14 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: "black",
     padding: 15,
+    margin: 20,
+  },
+  text2: {
+    fontSize: 16,
+    lineHeight: 21,
+    letterSpacing: 0.25,
+    color: "black",
+    margin: 10,
   },
 });
 
