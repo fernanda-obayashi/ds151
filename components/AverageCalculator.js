@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Button, TextInput, View, Text } from "react-native";
+import {
+  StyleSheet,
+  Button,
+  TextInput,
+  View,
+  Text,
+  Pressable,
+} from "react-native";
 import { Octicons } from "@expo/vector-icons";
 import {
   app,
@@ -46,6 +53,7 @@ const AverageCalculator = () => {
 
   return (
     <View>
+      <Text>Primeira nota:</Text>
       <View style={styles.container}>
         <Octicons name="number" size={24} color="black" />
         <TextInput
@@ -57,6 +65,8 @@ const AverageCalculator = () => {
           onSubmitEditing={addAverageCalculator}
         ></TextInput>
       </View>
+
+      <Text>Segunda nota:</Text>
       <View style={styles.container}>
         <Octicons name="number" size={24} color="black" />
         <TextInput
@@ -68,10 +78,12 @@ const AverageCalculator = () => {
         ></TextInput>
       </View>
       <View>
-        <Button title="Calcular" onPress={calcula}></Button>
+        <Pressable onPress={calcula} style={styles.button}>
+          <Text>Calcular!</Text>
+        </Pressable>
       </View>
       <View>
-        <Text>A média é: {result}</Text>
+        <Text style={styles.text}>A média é: {result}</Text>
       </View>
     </View>
   );
@@ -96,6 +108,28 @@ const styles = StyleSheet.create({
     width: "90%",
     alignSelf: "center",
     borderRadius: 10,
+  },
+  button: {
+    alignSelf: "center",
+    alignContent: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    padding: 11,
+    width: "60%",
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: "#f7edf6",
+  },
+  text: {
+    alignSelf: "center",
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: "bold",
+    letterSpacing: 0.25,
+    color: "black",
+    padding: 15,
   },
 });
 
