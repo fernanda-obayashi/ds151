@@ -8,9 +8,6 @@ const AverageCalculator = () => {
   const [nota2, setNota2] = useState(0);
   const [result, setResult] = useState(0);
 
-  const a = parseFloat(nota1.valueOf);
-  const b = parseFloat(nota2.valueOf);
-
   const addAverageCalculator = async () => {
     try {
       const docRef = await addDoc(collection(db, "averages"), {
@@ -61,10 +58,17 @@ const AverageCalculator = () => {
           style={styles.input}
           value={nota2}
           onChange={(e) => setNota2(+e.nativeEvent.text)}
+          onSubmitEditing={addAverageCalculator}
         ></TextInput>
       </View>
       <View>
-        <Pressable onPress={calcula} style={styles.button}>
+        <Pressable
+          onPress={() => {
+            calcula();
+            addAverageCalculator();
+          }}
+          style={styles.button}
+        >
           <Text>Calcular!</Text>
         </Pressable>
       </View>
