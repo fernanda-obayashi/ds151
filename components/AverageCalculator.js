@@ -61,7 +61,7 @@ const AverageCalculator = () => {
           placeholder="Digite aqui"
           style={styles.input}
           value={nota1}
-          onChange={(e) => setNota1(+e.target.value)}
+          onChange={(e) => setNota1(+e.nativeEvent.text)}
           onSubmitEditing={addAverageCalculator}
         ></TextInput>
       </View>
@@ -74,7 +74,7 @@ const AverageCalculator = () => {
           placeholder="Digite aqui"
           style={styles.input}
           value={nota2}
-          onChange={(e) => setNota2(+e.target.value)}
+          onChange={(e) => setNota2(+e.nativeEvent.text)}
         ></TextInput>
       </View>
       <View>
