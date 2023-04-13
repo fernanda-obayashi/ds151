@@ -1,21 +1,19 @@
-import { StyleSheet, SafeAreaView } from "react-native";
-import AverageCalculator from "./components/AverageCalculator";
-import HomeHeader from "./components/HomeHeader";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./screens/HomeScreen";
+import IconScreen from "./screens/IconScreen";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <HomeHeader></HomeHeader>
-      <AverageCalculator></AverageCalculator>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="IconScreen" component={IconScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    //margin: 20,
-    marginTop: 20,
-  },
-});
+export default App;

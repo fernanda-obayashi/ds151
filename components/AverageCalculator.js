@@ -1,21 +1,7 @@
-import React, { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  Button,
-  TextInput,
-  View,
-  Text,
-  Pressable,
-} from "react-native";
 import { Octicons } from "@expo/vector-icons";
-import {
-  app,
-  db,
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-} from "../firebase/index";
+import React, { useState } from "react";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { addDoc, collection, db, getDocs } from "../firebase/index";
 
 const AverageCalculator = () => {
   const [nota1, setNota1] = useState(0);
